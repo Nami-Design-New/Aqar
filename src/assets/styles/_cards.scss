@@ -1,70 +1,88 @@
-.properties {
-  background: #dff5f1;
-  border-radius: 8px;
+.property-card {
+  border-radius: 10px;
   overflow: hidden;
-  display: flex;
-  gap: 8px;
-  padding: 8px;
-  .image_card {
-    background-color: transparent;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 350px;
+  margin: auto;
+  transition: transform 0.3s ease-in-out;
+
+  .image-container {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
     position: relative;
-    max-width: 140px;
-    width: 140px;
+
     img {
       width: 100%;
+      height: 100%;
       object-fit: cover;
-      aspect-ratio: 1/1;
-      border-radius: 8px;
+      &:hover {
+        transform: scale(1.03);
+      }
     }
+
     .fav-btn {
-      @include clearInput;
-      background-color: transparent;
       position: absolute;
-      top: 0;
-      right: 0;
-      transform: translate(-50%, 50%);
-      width: 20px;
-      height: 20px;
+      top: 10px;
+      right: 10px;
+      font-size: 22px;
       cursor: pointer;
-      i {
-        font-size: 20px;
-        color: var(--main);
+      color: var(--main);
+      transition: transform 0.2s ease-in-out;
+
+      &:hover {
+        transform: scale(1.2);
       }
     }
   }
-  h2 {
-    font-size: 16px;
-    line-height: 20px;
-    font-weight: 600;
-    color: var(--main);
-  }
-  .card_info {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    .info {
+
+  .card-content {
+    padding: 16px;
+    text-align: center;
+
+    .title-price {
       display: flex;
-      flex-direction: column;
-      gap: 8px;
-      .flat-details {
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: bold;
+      color: var(--main);
+      margin: 0;
+    }
+
+    .price {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0;
+      white-space: nowrap;
+    }
+
+    .details {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      font-size: 14px;
+      color: #333;
+      text-align: center;
+      margin-top: 15px;
+
+      span {
         display: flex;
         align-items: center;
-        gap: 8px;
-        font-size: 14px;
-        color: var(--dark);
-        span {
-          display: flex;
-          gap: 2px;
+        justify-content: center;
+        gap: 6px;
+
+        i {
+          color: var(--main);
         }
       }
-      p {
-        font-size: 14px;
-        color: var(--dark);
-        margin: 0;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-      }
+    }
+    .address {
+      margin-top: 10px;
     }
   }
 }

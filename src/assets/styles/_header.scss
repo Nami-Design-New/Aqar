@@ -6,8 +6,8 @@
   gap: 1rem;
 
   img {
-    width: 63px;
-    height: 60px;
+    // width: 63px;
+    height: 40px;
   }
 
   .logo-text {
@@ -22,8 +22,8 @@
 }
 
 .header {
-  min-height: 100px;
-  padding: 1rem 2rem;
+  min-height: 90px;
+  padding: 0.7rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -133,14 +133,14 @@
 
 .side-menu {
   position: fixed;
-  top: 100px;
+  top: 90px;
   right: -100%;
   min-width: 300px;
   background-color: var(--white);
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 1rem;
+  padding: 0.7rem;
   height: calc(100vh - 100px);
   overflow-y: auto;
   border-left: 1px solid var(--border);

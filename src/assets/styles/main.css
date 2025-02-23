@@ -370,8 +370,7 @@ input[type=checkbox] {
   gap: 1rem;
 }
 .logo img {
-  width: 63px;
-  height: 60px;
+  height: 40px;
 }
 .logo .logo-text {
   font-size: 0.875rem;
@@ -385,8 +384,8 @@ input[type=checkbox] {
 }
 
 .header {
-  min-height: 100px;
-  padding: 1rem 2rem;
+  min-height: 90px;
+  padding: 0.7rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -491,14 +490,14 @@ input[type=checkbox] {
 
 .side-menu {
   position: fixed;
-  top: 100px;
+  top: 90px;
   right: -100%;
   min-width: 300px;
   background-color: var(--white);
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 1rem;
+  padding: 0.7rem;
   height: calc(100vh - 100px);
   overflow-y: auto;
   border-left: 1px solid var(--border);
@@ -954,78 +953,83 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0 1rem;
 }
 
-.properties {
-  background: #dff5f1;
-  border-radius: 8px;
+.property-card {
+  border-radius: 10px;
   overflow: hidden;
-  display: flex;
-  gap: 8px;
-  padding: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 350px;
+  margin: auto;
+  transition: transform 0.3s ease-in-out;
 }
-.properties .image_card {
-  background-color: transparent;
-  position: relative;
-  max-width: 140px;
-  width: 140px;
-}
-.properties .image_card img {
+.property-card .image-container {
   width: 100%;
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+.property-card .image-container img {
+  width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  aspect-ratio: 1/1;
-  border-radius: 8px;
 }
-.properties .image_card .fav-btn {
-  border: none;
-  background: none;
-  outline: none;
-  background-color: transparent;
+.property-card .image-container img:hover {
+  transform: scale(1.03);
+}
+.property-card .image-container .fav-btn {
   position: absolute;
-  top: 0;
-  right: 0;
-  transform: translate(-50%, 50%);
-  width: 20px;
-  height: 20px;
+  top: 10px;
+  right: 10px;
+  font-size: 22px;
   cursor: pointer;
+  color: var(--main);
+  transition: transform 0.2s ease-in-out;
 }
-.properties .image_card .fav-btn i {
+.property-card .image-container .fav-btn:hover {
+  transform: scale(1.2);
+}
+.property-card .card-content {
+  padding: 16px;
+  text-align: center;
+}
+.property-card .card-content .title-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.property-card .card-content h2 {
   font-size: 20px;
+  font-weight: bold;
   color: var(--main);
-}
-.properties h2 {
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 600;
-  color: var(--main);
-}
-.properties .card_info {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.properties .card_info .info {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.properties .card_info .info .flat-details {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  color: var(--dark);
-}
-.properties .card_info .info .flat-details span {
-  display: flex;
-  gap: 2px;
-}
-.properties .card_info .info p {
-  font-size: 14px;
-  color: var(--dark);
   margin: 0;
+}
+.property-card .card-content .price {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  white-space: nowrap;
+}
+.property-card .card-content .details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  font-size: 14px;
+  color: #333;
+  text-align: center;
+  margin-top: 15px;
+}
+.property-card .card-content .details span {
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 6px;
+}
+.property-card .card-content .details span i {
+  color: var(--main);
+}
+.property-card .card-content .address {
+  margin-top: 10px;
 }
 
 .guest-rates-card {
@@ -1114,9 +1118,10 @@ body main {
   min-height: calc(100vh - 100px);
 }
 body .hero-section {
-  padding: 100px 0;
-  background: url("/images/hero.png");
-  background-color: rgba(0, 0, 0, 0.4);
+  padding: 150px 0;
+  background: url("/images/banner.jpg");
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.499);
   background-position: center;
   background-repeat: no-repeat;
   background-blend-mode: multiply;
@@ -1138,7 +1143,7 @@ body .hero-section p {
 }
 body .search-box {
   width: 100%;
-  padding: 16px;
+  padding: 14px;
   margin-top: 2rem;
   border-radius: 16px;
   background: var(--white);
@@ -1157,7 +1162,7 @@ body .search-box .search-form .filter-btn {
   justify-content: center;
 }
 body .rent-section {
-  padding: 100px 0;
+  padding: 80px 0;
 }
 body .rent-section .section-header {
   display: flex;
@@ -1180,6 +1185,29 @@ body .rent-section .section-header a {
 }
 body .rent-section .section-header a:hover {
   color: var(--main);
+}
+body .rent-section .custom-swiper {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 50px;
+}
+body .rent-section .custom-swiper .swiper-slide {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 4px 4px 10px 4px rgba(70, 128, 119, 0.1);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .rent-section .custom-swiper .swiper-pagination-bullet {
+  background: var(--main);
+}
+body .rent-section .custom-swiper .swiper-slide-active {
+  transform: scale(1.1);
+}
+body .rent-section .custom-slide {
+  max-width: 310px;
 }
 body .why-us-section {
   padding: 2rem 3rem;
